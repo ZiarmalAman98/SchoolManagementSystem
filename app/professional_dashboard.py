@@ -1,15 +1,78 @@
 from __future__ import annotations
 
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QFrame, QGridLayout, QHBoxLayout, QLabel, QPushButton, QVBoxLayout
+from PySide6.QtWidgets import QFrame, QGridLayout, QHBoxLayout, QLabel, QListWidget, QPushButton, QVBoxLayout
 
-from .main import DashboardPage as BaseDashboardPage, StatCard, money
+from .main import DashboardPage as BaseDashboardPage, StatCard
+
+
+DASHBOARD_STYLESHEET = """
+QFrame#dashboardWelcome {
+    background: #112f4b;
+    border: 1px solid #1e4b70;
+    border-radius: 18px;
+}
+QLabel#dashboardWelcomeTitle {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+}
+QLabel#dashboardWelcomeSubtitle {
+    color: #b9d0e4;
+    font-size: 13px;
+}
+QPushButton#dashboardRefresh {
+    background: #ffffff;
+    color: #193850;
+    border: none;
+    border-radius: 10px;
+    padding: 9px 16px;
+    font-weight: 700;
+}
+QPushButton#dashboardRefresh:hover { background: #eaf3ff; }
+QLabel#dashboardSectionTitle {
+    color: #193850;
+    font-size: 16px;
+    font-weight: 700;
+}
+QFrame#dashboardQuickActions, QFrame#dashboardSection {
+    background: #ffffff;
+    border: 1px solid #e4ebf2;
+    border-radius: 16px;
+}
+QPushButton#dashboardActionButton {
+    background: #f5f8fc;
+    color: #28455f;
+    border: 1px solid #e1e9f1;
+    border-radius: 10px;
+    padding: 9px 14px;
+    font-weight: 650;
+}
+QPushButton#dashboardActionButton:hover {
+    background: #eaf3ff;
+    border-color: #9ec3f8;
+    color: #1d66de;
+}
+QLabel#dashboardLiveBadge {
+    background: #e8f7f1;
+    color: #16856a;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: 800;
+}
+QLabel#dashboardPulse {
+    color: #5a748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+"""
 
 
 class ProfessionalDashboardPage(BaseDashboardPage):
     """Modern dashboard presentation layer built on the existing dashboard logic."""
 
     def _build(self) -> None:
+        self.setStyleSheet(DASHBOARD_STYLESHEET)
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(18)
@@ -92,7 +155,6 @@ class ProfessionalDashboardPage(BaseDashboardPage):
         activity_heading.addWidget(live)
         activity_layout.addLayout(activity_heading)
 
-        from PySide6.QtWidgets import QListWidget
         self.activity_list = QListWidget()
         self.activity_list.setObjectName("activityList")
         self.activity_list.setMinimumHeight(190)
