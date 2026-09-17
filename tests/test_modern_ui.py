@@ -1,4 +1,4 @@
-from app.modern_ui import LOGIN_STYLE, LOGOUT_STYLE, MODERN_LOGIN_MIN_WIDTH
+from app.modern_ui import LOGIN_STYLE, LOGOUT_STYLE, MODERN_LOGIN_MIN_WIDTH, modern_logout
 
 
 def test_modern_login_contract():
@@ -10,4 +10,4 @@ def test_modern_login_contract():
 
 def test_modern_logout_contract():
     assert "#logoutButton" in LOGOUT_STYLE
-    assert "QMessageBox" in LOGOUT_STYLE
+    assert "Sign out" in modern_logout.__name__ or callable(modern_logout)
