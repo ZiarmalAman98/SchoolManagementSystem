@@ -5,33 +5,38 @@ from PySide6.QtWidgets import QApplication, QCheckBox, QComboBox, QHBoxLayout, Q
 MODERN_LOGIN_MIN_WIDTH = 1080
 
 LOGIN_STYLE = """
-#loginWindow { background: #f5f8fc; }
-#loginBrand { background: #102a43; border-right: 1px solid #183c5a; }
+* { font-family: "Segoe UI", "Noto Sans", sans-serif; }
+#loginWindow { background: #f4f7fb; }
+#loginBrand { background: #102a43; border-right: 1px solid #173b59; }
 #loginBrand QLabel { color: #f7fbff; }
 #loginTitle { font-size: 42px; font-weight: 800; color: #ffffff; }
-#loginSubtitle { color: #b9cee1; font-size: 15px; }
-#eyebrow { color: #6eb1ff; font-size: 10px; font-weight: 800; letter-spacing: 1.8px; }
+#loginSubtitle { color: #b9cee1; font-size: 15px; line-height: 1.5; }
+#eyebrow { color: #73b0ff; font-size: 10px; font-weight: 800; letter-spacing: 1.8px; }
 #loginFooter { color: #91abc0; font-size: 12px; }
 #loginFormPanel { background: #ffffff; }
-#formTitle { color: #122b43; font-size: 30px; font-weight: 800; }
+#formTitle { color: #102a43; font-size: 30px; font-weight: 800; }
 #loginIntro { color: #71879a; font-size: 13px; }
 #fieldLabel { color: #36536b; font-size: 12px; font-weight: 700; }
 #loginInput { background: #ffffff; border: 1px solid #d5e0ea; border-radius: 12px; padding: 12px 14px; color: #183047; font-size: 14px; }
-#loginInput:focus { border: 2px solid #6aa8f8; }
+#loginInput:hover { border-color: #b9cbe0; }
+#loginInput:focus { border: 2px solid #72a9f5; }
 #passwordToggle { background: #f4f7fa; border: 1px solid #d5e0ea; border-radius: 10px; color: #48657b; font-weight: 700; padding: 0 12px; }
 #passwordToggle:hover { background: #eaf3ff; color: #1d66de; }
-#loginButton { background: #2979ff; color: #ffffff; border: none; border-radius: 12px; padding: 13px 18px; font-size: 14px; font-weight: 800; }
-#loginButton:hover { background: #1d66de; }
-#loginButton:pressed { background: #1858c5; }
+#loginButton { background: #2563eb; color: #ffffff; border: none; border-radius: 12px; padding: 13px 18px; font-size: 14px; font-weight: 800; }
+#loginButton:hover { background: #1d4ed8; }
+#loginButton:pressed { background: #1e40af; }
 #exitButton { background: #ffffff; color: #526b80; border: 1px solid #d5e0ea; border-radius: 11px; padding: 11px 18px; font-weight: 650; }
 #exitButton:hover { background: #f4f8fc; }
 #loginBadge { background: #edf5ff; color: #2864bd; border: 1px solid #d7e7fa; border-radius: 9px; padding: 7px 10px; font-size: 11px; font-weight: 700; }
+#rememberCheck { color: #526b80; }
+#hint { color: #91a0ad; font-size: 11px; }
+QComboBox { background: #ffffff; border: 1px solid #d5e0ea; border-radius: 8px; padding: 7px 9px; color: #40566e; }
 """
 
 LOGOUT_STYLE = """
-#logoutButton { text-align: left; background: #fff4f4; border: 1px solid #ffd6d6; border-radius: 10px; padding: 10px 12px; color: #c23a4b; font-weight: 750; }
-#logoutButton:hover { background: #ffe7e9; border-color: #f2b8bf; }
-#logoutButton:pressed { background: #ffdfe2; }
+#logoutButton { text-align: left; background: #fff5f5; border: 1px solid #fee0e2; border-radius: 11px; padding: 10px 13px; color: #c2414f; font-weight: 750; }
+#logoutButton:hover { background: #ffecee; border-color: #f7c7cc; }
+#logoutButton:pressed { background: #ffdfe3; }
 """
 
 
