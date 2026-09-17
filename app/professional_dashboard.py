@@ -10,31 +10,31 @@ from .professional_charts import BarChartWidget, DonutChartWidget
 
 
 LIGHT_DASHBOARD_STYLESHEET = """
-QFrame#dashboardWelcome { background: #2979ff; border: 1px solid #1d66de; border-radius: 18px; }
+QFrame#dashboardWelcome { background: #7c3aed; border: 1px solid #6d28d9; border-radius: 18px; }
 QLabel#dashboardWelcomeTitle { color: #ffffff; font-size: 25px; font-weight: 700; }
-QLabel#dashboardWelcomeSubtitle { color: #e8f2ff; font-size: 13px; }
-QPushButton#dashboardRefresh { background: #ffffff; color: #193850; border: none; border-radius: 10px; padding: 9px 16px; font-weight: 700; }
-QPushButton#dashboardRefresh:hover { background: #eaf3ff; }
-QLabel#dashboardSectionTitle { color: #193850; font-size: 16px; font-weight: 700; }
-QFrame#dashboardQuickActions, QFrame#dashboardSection { background: #ffffff; border: 1px solid #e1e8f0; border-radius: 16px; }
-QPushButton#dashboardActionButton { background: #f5f8fc; color: #28455f; border: 1px solid #e1e9f1; border-radius: 10px; padding: 9px 14px; font-weight: 650; }
-QPushButton#dashboardActionButton:hover { background: #eaf3ff; border-color: #9ec3f8; color: #1d66de; }
-QLabel#dashboardLiveBadge { background: #e8f7f1; color: #16856a; border-radius: 8px; padding: 4px 8px; font-size: 10px; font-weight: 800; }
-QLabel#dashboardPulse { color: #5a748b; font-size: 14px; }
+QLabel#dashboardWelcomeSubtitle { color: #eee6ff; font-size: 13px; }
+QPushButton#dashboardRefresh { background: #ffffff; color: #4b2d70; border: none; border-radius: 10px; padding: 9px 16px; font-weight: 700; }
+QPushButton#dashboardRefresh:hover { background: #f4efff; }
+QLabel#dashboardSectionTitle { color: #493660; font-size: 16px; font-weight: 700; }
+QFrame#dashboardQuickActions, QFrame#dashboardSection { background: #ffffff; border: 1px solid #e8e1f2; border-radius: 16px; }
+QPushButton#dashboardActionButton { background: #f7f3ff; color: #55436d; border: 1px solid #e8def8; border-radius: 10px; padding: 9px 14px; font-weight: 650; }
+QPushButton#dashboardActionButton:hover { background: #eee6ff; border-color: #cdb7f2; color: #6d28d9; }
+QLabel#dashboardLiveBadge { background: #f0eaff; color: #7048d8; border-radius: 8px; padding: 4px 8px; font-size: 10px; font-weight: 800; }
+QLabel#dashboardPulse { color: #766985; font-size: 14px; }
 """
 
 DARK_DASHBOARD_STYLESHEET = """
-QFrame#dashboardWelcome { background: #1d66de; border: 1px solid #3b80e8; border-radius: 18px; }
+QFrame#dashboardWelcome { background: #8b5cf6; border: 1px solid #a78bfa; border-radius: 18px; }
 QLabel#dashboardWelcomeTitle { color: #ffffff; font-size: 25px; font-weight: 700; }
-QLabel#dashboardWelcomeSubtitle { color: #d9ebff; font-size: 13px; }
-QPushButton#dashboardRefresh { background: #e6f1fb; color: #183047; border: none; border-radius: 10px; padding: 9px 16px; font-weight: 700; }
-QPushButton#dashboardRefresh:hover { background: #d4e8fb; }
-QLabel#dashboardSectionTitle { color: #edf6ff; font-size: 16px; font-weight: 700; }
-QFrame#dashboardQuickActions, QFrame#dashboardSection { background: #162638; border: 1px solid #253b4e; border-radius: 16px; }
-QPushButton#dashboardActionButton { background: #1b3043; color: #d9e8f5; border: 1px solid #30485c; border-radius: 10px; padding: 9px 14px; font-weight: 650; }
-QPushButton#dashboardActionButton:hover { background: #24445d; border-color: #4f7898; color: #ffffff; }
-QLabel#dashboardLiveBadge { background: #163f37; color: #70d0b3; border-radius: 8px; padding: 4px 8px; font-size: 10px; font-weight: 800; }
-QLabel#dashboardPulse { color: #a8bfd1; font-size: 14px; }
+QLabel#dashboardWelcomeSubtitle { color: #f0eaff; font-size: 13px; }
+QPushButton#dashboardRefresh { background: #f4efff; color: #35205f; border: none; border-radius: 10px; padding: 9px 16px; font-weight: 700; }
+QPushButton#dashboardRefresh:hover { background: #e9ddff; }
+QLabel#dashboardSectionTitle { color: #f0eaff; font-size: 16px; font-weight: 700; }
+QFrame#dashboardQuickActions, QFrame#dashboardSection { background: #211735; border: 1px solid #3b2b56; border-radius: 16px; }
+QPushButton#dashboardActionButton { background: #2b2040; color: #ded3ec; border: 1px solid #46345f; border-radius: 10px; padding: 9px 14px; font-weight: 650; }
+QPushButton#dashboardActionButton:hover { background: #3b2860; border-color: #6b4ba0; color: #ffffff; }
+QLabel#dashboardLiveBadge { background: #3b2860; color: #cbb1ff; border-radius: 8px; padding: 4px 8px; font-size: 10px; font-weight: 800; }
+QLabel#dashboardPulse { color: #c3b4d4; font-size: 14px; }
 """
 
 
@@ -159,10 +159,10 @@ class ProfessionalDashboardPage(BaseDashboardPage):
         super().refresh()
         self._refresh_charts()
         dark = self.db.setting("theme", "light") == "dark"
-        metric_bg = "#162638" if dark else "#ffffff"
-        metric_border = "#253b4e" if dark else "#e4ebf2"
-        activity_selected = "#24445d" if dark else "#eef5ff"
-        activity_text = "#edf6ff" if dark else "#183047"
+        metric_bg = "#211735" if dark else "#ffffff"
+        metric_border = "#3b2b56" if dark else "#e8e1f2"
+        activity_selected = "#3b2860" if dark else "#f0eaff"
+        activity_text = "#f0eaff" if dark else "#35205f"
         for index in range(self.stats.count()):
             widget = self.stats.itemAt(index).widget()
             if isinstance(widget, StatCard):
@@ -170,6 +170,6 @@ class ProfessionalDashboardPage(BaseDashboardPage):
                 widget.setStyleSheet(f"QFrame#dashboardMetric {{ background: {metric_bg}; border: 1px solid {metric_border}; border-radius: 16px; }}")
         self.activity_list.setStyleSheet(
             "QListWidget { background: transparent; border: none; }"
-            "QListWidget::item { padding: 12px 6px; border-bottom: 1px solid #edf1f5; }"
+            "QListWidget::item { padding: 12px 6px; border-bottom: 1px solid #eee9f3; }"
             f"QListWidget::item:selected {{ background: {activity_selected}; color: {activity_text}; border-radius: 8px; }}"
         )
