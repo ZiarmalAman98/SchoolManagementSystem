@@ -73,7 +73,6 @@ def _professional_sidebar(self):
     help_layout.addWidget(QLabel("OFFLINE • SECURE", objectName="helpTitle")); help_layout.addWidget(QLabel("School data stays on this computer.", objectName="helpText"))
     outer.addWidget(help_card); outer.addSpacing(8)
     logout = QPushButton("Logout"); logout.setObjectName("logoutButton"); logout.setCursor(Qt.CursorShape.PointingHandCursor); logout.setMinimumHeight(44)
-    logout.setStyleSheet("#logoutButton { text-align: left; background: #fff4f4; border: 1px solid #ffd6d6; border-radius: 10px; padding: 10px 12px; color: #c23a4b; font-weight: 750; } #logoutButton:hover { background: #ffe7e9; border-color: #f2b8bf; }")
     logout.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_DialogCloseButton)); logout.setIconSize(QSize(19, 19)); logout.clicked.connect(self.logout)
     outer.addWidget(logout)
     return sidebar
