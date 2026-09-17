@@ -4,7 +4,6 @@ from PySide6.QtWidgets import QFrame, QHBoxLayout, QLabel, QVBoxLayout
 from sqlalchemy import func, select
 
 from .database import Payment
-from .main import Expense as LegacyExpense
 from .main import ReportsPage as BaseReportsPage
 from .models_extended import Expense
 from .professional_charts import BarChartWidget
@@ -55,7 +54,8 @@ class ProfessionalReportsPage(BaseReportsPage):
                 .order_by(func.strftime("%Y-%m", Expense.expense_date).desc())
                 .limit(6)
             ).all()
-        payment_rows.reverse(); expense_rows.reverse()
+        payment_rows.reverse()
+        expense_rows.reverse()
         self.income_chart.set_data([row[0] or "—" for row in payment_rows], [float(row[1]) for row in payment_rows])
         self.expense_chart.set_data([row[0] or "—" for row in expense_rows], [float(row[1]) for row in expense_rows])
 
